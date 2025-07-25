@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Participantes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+    <div class="logo">🍀Rifa</div>
+    <ul>
+        <li><a href="index.html">Cadastro</a></li>
+    </ul>
+    </nav>
+
+    <h1>Lista de Participantes</h1>
+
+    <table id="tabelaParticipantes"  style="border : 1; width:70%; text-align:left;">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Números</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <button id="btnGerarPDF" class="btnlist">Gerar PDF</button>
+    <button id="btnLimparTudo" class="btnlist" style="margin-left:10px; background:#f44336; color:#fff;">Limpar Tudo</button>
+
+    <script src="participantes.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</body>
+</html>

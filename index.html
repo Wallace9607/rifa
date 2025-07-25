@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Rifa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">🍀Rifa</div>
+        <ul>
+            <li><a href="participantes.html">Participantes</a></li>
+        </ul>
+    </nav>
+
+    <h1>🍀Cadastro de Rifa🍀</h1>
+    
+        
+
+    <form id="cadastroForm">
+        <input type="text" id="nome" placeholder="Nome" required>
+        <input type="text" id="telefone" placeholder="Telefone" required>
+        <input type="text" id="numeroEscolhido" placeholder="Números Escolhidos (ex: 5, 12, 23)" required>
+        <button type="submit">Cadastrar</button>
+        <span id="infoExistente" style="display:none; color: green; font-size: 12px;">Participante <br>já cadastrado</span>
+    </form>
+
+    <h2>Números Disponíveis</h2>
+    <div id="rifa-grid"></div>
+
+        <button id="btnSortear">Sortear</button>
+        <!-- Modal de Sorteio -->
+        <div id="sorteioModal" class="modal">
+            <div class="modal-content">
+                <span id="numeroSorteado"></span>
+                <span id="nomeSorteado" class="hidden"></span>
+                
+            </div>
+            
+        </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
