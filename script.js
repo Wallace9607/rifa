@@ -8,7 +8,7 @@ const infoExistente = document.getElementById('infoExistente');
 let participantes = JSON.parse(localStorage.getItem('participantesRifa')) || [];
 
 // Criar os números da rifa (1 a 100)
-for (let i = 1; i <= 100; i++) {
+for (let i = 1; i <= 500; i++) {
     const numeroDiv = document.createElement('div');
     numeroDiv.classList.add('numero');
     numeroDiv.textContent = i;
@@ -18,7 +18,7 @@ for (let i = 1; i <= 100; i++) {
 
 // Atualizar a Grid com números reservados
 function atualizarGrid() {
-    for (let i = 1; i <= 100; i++) {
+    for (let i = 1; i <= 500; i++) {
         const numeroDiv = document.getElementById(`numero-${i}`);
         numeroDiv.classList.remove('reservado');
 
