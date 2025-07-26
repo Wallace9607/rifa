@@ -69,7 +69,7 @@ cadastroForm.addEventListener('submit', (e) => {
     // Transformar texto em array de números
     const numerosEscolhidos = numerosTexto.split(',')
         .map(num => parseInt(num.trim()))
-        .filter(num => !isNaN(num) && num >= 1 && num <= 100);
+        .filter(num => !isNaN(num) && num >= 1 && num <= 500);
 
     if (numerosEscolhidos.length === 0) {
         alert("Informe números válidos entre 1 e 100.");
