@@ -7,7 +7,7 @@ const infoExistente = document.getElementById('infoExistente');
 
 let participantes = JSON.parse(localStorage.getItem('participantesRifa')) || [];
 
-// Criar os números da rifa (1 a 100)
+// Criar os números da rifa (1 a 500)
 for (let i = 1; i <= 500; i++) {
     const numeroDiv = document.createElement('div');
     numeroDiv.classList.add('numero');
@@ -72,7 +72,7 @@ cadastroForm.addEventListener('submit', (e) => {
         .filter(num => !isNaN(num) && num >= 1 && num <= 500);
 
     if (numerosEscolhidos.length === 0) {
-        alert("Informe números válidos entre 1 e 100.");
+        alert("Informe números válidos entre 1 e 500.");
         return;
     }
 
