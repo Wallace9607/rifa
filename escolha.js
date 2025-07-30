@@ -4,7 +4,7 @@ const btnEscolher = document.getElementById('btnEscolher');
 // Carregar configurações da Rifa
 let configuracoesRifa = JSON.parse(localStorage.getItem('configuracoesRifa')) || {
     itemRifa: 'Rifa',
-    quantidadeNumeros: 100
+    quantidadeNumeros: 500
 };
 
 // Carregar participantes para saber números já reservados
