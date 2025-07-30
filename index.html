@@ -9,16 +9,29 @@
 <body>
 
     <nav class="navbar">
-        <div class="logo">🍀Rifa</div>
-        <ul>
-            <li><a href="participantes.html">Participantes</a></li>
-        </ul>
+    <div class="logo">🍀Rifa</div>
+    <ul>
+        <li><a href="escolha.html"><button class="btnConfig">Participe</button></a></li>
+        <li><a href="participantes.html"><button class="btnConfig">Participantes</button></a></li>
+        <li><button id="btnConfig" class="btnConfig">Configurações ⚙️</button></li>
+    </ul>
     </nav>
 
-    <h1>🍀Cadastro de Rifa🍀</h1>
-    
-        
+    <h1 id="tituloRifa">🍀Cadastro de Rifa🍀</h1>
 
+    <!-- Modal Configurações -->
+    <div id="configModal" class="modal">
+        <div class="modal-content config">
+            <h2>Configurações da Rifa</h2>
+            <label>Item da Rifa:</label><br>
+            <input type="text" id="itemRifaInput"><br><br>
+            <label>Quantidade de Números:</label><br>
+            <input type="number" id="quantidadeNumerosInput" min="1"><br><br>
+            <button id="salvarConfig">Salvar Configurações</button>
+            <button id="btnLimparTudo" class="btnlist" style="margin-left:10px; background:#f44336; color:#fff;">Limpar Tudo</button>
+        </div>
+    </div>
+    
     <form id="cadastroForm">
         <input type="text" id="nome" placeholder="Nome" required>
         <input type="text" id="telefone" placeholder="Telefone" required>
@@ -40,10 +53,6 @@
             </div>
             
         </div>
-
     <script src="script.js"></script>
 </body>
 </html>
-
-
-
