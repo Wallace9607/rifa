@@ -36,13 +36,8 @@ nav span{
 }
 
 .navbar ul li a {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     text-decoration: none;
-    font-weight: bold;
-}
-
-.navbar ul li a:hover {
-    text-decoration: underline;
 }
 
 form {
@@ -87,6 +82,12 @@ button {
     background-color: #44c74b;
     color: white;
     border-color: #44c74b;
+}
+
+.numero.selecionado {
+    background-color: #6ac5fa; /* Amarelo Ouro */
+    border-color: #6ac5fa;
+    color: #000;
 }
 
 table {
@@ -267,4 +268,20 @@ th, td {
 /* Ocultar elementos */
 .hidden {
     display: none;
+}
+
+/* Botão Configurações */
+.btnConfig {
+    background: #6ac5fa;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Modal Configurações */
+.modal-content.config {
+    max-width: 400px;
+    max-height: 500px;
+    font-size: 14px;
 }
