@@ -145,6 +145,11 @@ th, td {
     visibility: visible;
     opacity: 1;
 }
+.destaque-vermelho {
+    background-color: red;
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+}
 
 /* Ajuste do grid para telas menores */
 @media (max-width: 768px) {
@@ -285,3 +290,4 @@ th, td {
     max-height: 500px;
     font-size: 14px;
 }
+
