@@ -147,7 +147,8 @@ th, td {
 }
 .destaque-vermelho {
     background-color: red;
-    color: rgb(255, 0, 0);
+    color: white;
+    border-color: red;
     font-weight: bold;
 }
 
@@ -290,4 +291,5 @@ th, td {
     max-height: 500px;
     font-size: 14px;
 }
+
 
