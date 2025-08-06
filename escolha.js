@@ -10,8 +10,12 @@ let configuracoesRifa = JSON.parse(localStorage.getItem('configuracoesRifa')) ||
 // Carregar participantes para saber números já reservados
 let participantes = JSON.parse(localStorage.getItem('participantesRifa')) || [];
 
-// Lista de números selecionados pelo participante
-let numerosSelecionados = [];
+// Lista de números que ficarão em vermelho
+const numerosEmVermelho = [
+  1, 2, 3, 4, 6, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18,
+  24, 28, 30, 33, 40, 41, 42, 59, 70, 72, 88, 99, 171,
+  183, 207, 260, 300, 358, 370, 417, 425, 472, 495
+];
 
 // Montar Grid de Números
 for (let i = 1; i <= configuracoesRifa.quantidadeNumeros; i++) {
@@ -19,6 +23,11 @@ for (let i = 1; i <= configuracoesRifa.quantidadeNumeros; i++) {
     numeroDiv.classList.add('numero');
     numeroDiv.textContent = i;
     numeroDiv.id = `numero-${i}`;
+
+    // Se o número estiver na lista, aplica o destaque vermelho
+    if (numerosEmVermelho.includes(i)) {
+        numeroDiv.classList.add('destaque-vermelho');
+    }
 
     const reservado = participantes.some(p => p.numeros.includes(i));
     if (reservado) {
@@ -50,4 +59,5 @@ btnEscolher.addEventListener('click', () => {
 
     const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
     window.open(linkWhatsApp, '_blank');
+
 });
