@@ -12,9 +12,7 @@ let participantes = JSON.parse(localStorage.getItem('participantesRifa')) || [];
 
 // Lista de números que ficarão em vermelho
 const numerosEmVermelho = [
-  1, 2, 3, 4, 6, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18,19,
-  24, 28, 30, 33, 40, 41, 42, 59, 70, 72, 88, 99, 171,
-  183, 207, 260, 300, 358, 370, 417, 425, 472, 495
+  1, 2, 3, 4, 6, 8, 9, 11, 12, 13, 14, 15, 16, 17,18,19, 24, 28, 30, 33, 40, 41, 42, 59, 70, 72, 88, 99, 171, 183, 207, 260, 300, 358, 370, 417, 425, 472, 495
 ];
 
 // Montar Grid de Números
