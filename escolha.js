@@ -62,7 +62,27 @@ btnEscolher.addEventListener('click', () => {
     window.open(linkWhatsApp, '_blank');
 });
 
+document.getElementById('btnCompartilhar').addEventListener('click', () => {
+  const url = 'https://wallace9607.github.io/rifa/escolha.html';
+  const titulo = "Participe da minha Rifa!";
+  const texto = "Escolha seus números antes que acabem! 🍀";
 
-
-
-
+  if (navigator.share) {
+    navigator.share({
+      title: titulo,
+      text: texto,
+      url: url
+    }).then(() => {
+      console.log('Rifa compartilhada com sucesso!');
+    }).catch(err => {
+      console.error('Erro ao compartilhar:', err);
+    });
+  } else {
+    // Fallback: copiar link para a área de transferência
+    navigator.clipboard.writeText(url).then(() => {
+      alert("Link copiado! Agora é só colar e compartilhar onde quiser.");
+    }).catch(err => {
+      alert("Não foi possível copiar o link. Copie manualmente:\n" + url);
+    });
+  }
+});
