@@ -7,10 +7,20 @@ const infoExistente = document.getElementById('infoExistente');
 
 let participantes = JSON.parse(localStorage.getItem('participantesRifa')) || [];
 
+// Corrigir participantes antigos que não têm o campo 'pago'
+participantes = participantes.map(p => {
+    if (p.pago === undefined) {
+        p.pago = false;
+    }
+    return p;
+});
+localStorage.setItem('participantesRifa', JSON.stringify(participantes));
+
 let configuracoesRifa = JSON.parse(localStorage.getItem('configuracoesRifa')) || {
     itemRifa: 'Rifa',
     quantidadeNumeros: 100
 };
+
 
 // Aplicar Configurações Iniciais
 function aplicarConfiguracoes() {
@@ -114,7 +124,7 @@ cadastroForm.addEventListener('submit', (e) => {
         });
     } else {
         // Novo participante
-        participantes.push({ nome, telefone, numeros: numerosEscolhidos });
+        participantes.push({ nome, telefone, numeros: numerosEscolhidos, pago: false });
     }
 
     localStorage.setItem('participantesRifa', JSON.stringify(participantes));
