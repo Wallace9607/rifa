@@ -327,3 +327,9 @@ th {
 .btnCompartilhar:hover {
   background-color: #45a049;
 }
+.destaque-vermelho {
+    background-color: red;
+    color: white;
+    border-color: red;
+    font-weight: bold;
+}
