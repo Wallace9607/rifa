@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <nav class="navbar">
     <div class="logo">🍀Rifa</div>
     <ul>
@@ -16,9 +15,7 @@
         <li><button id="btnConfig" class="btnConfig">Configurações ⚙️</button></li>
     </ul>
     </nav>
-
     <h1 id="tituloRifa">🍀Cadastro de Rifa🍀</h1>
-
     <!-- Modal Configurações -->
     <div id="configModal" class="modal">
         <div class="modal-content config">
@@ -31,7 +28,6 @@
             <button id="btnLimparTudo" class="btnlist" style="margin-left:10px; background:#f44336; color:#fff;">Limpar Tudo</button>
         </div>
     </div>
-    
     <form id="cadastroForm">
         <input type="text" id="nome" placeholder="Nome" required>
         <input type="text" id="telefone" placeholder="Telefone" required>
@@ -39,19 +35,15 @@
         <button type="submit">Cadastrar</button>
         <span id="infoExistente" style="display:none; color: green; font-size: 12px;">Participante <br>já cadastrado</span>
     </form>
-
     <h2>Números Disponíveis</h2>
     <div id="rifa-grid"></div>
-
         <button id="btnSortear">Sortear</button>
         <!-- Modal de Sorteio -->
         <div id="sorteioModal" class="modal">
             <div class="modal-content">
                 <span id="numeroSorteado"></span>
                 <span id="nomeSorteado" class="hidden"></span>
-                
             </div>
-            
         </div>
     <script src="script.js"></script>
 </body>
