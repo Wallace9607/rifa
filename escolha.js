@@ -16,7 +16,8 @@ let participantes = JSON.parse(localStorage.getItem('participantesRifa')) || [];
 // Lista de números que ficarão em vermelho
 const numerosEmVermelho = [1, 2, 3, 4, 6, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 24, 28, 30, 33, 40, 41, 42, 59, 70, 72, 88, 99, 171, 183, 207, 260, 300, 358, 370, 417, 425, 472, 495,
                           21, 57, 37, 112, 221,  62, 108, 128, 149, 159, 173, 194, 219, 224, 239, 249, 286, 315, 330, 389, 440, 454, 492, 475, 404, 350, 145, 23, 53, 43,
-                          81, 136, 169, 290, 354, 92, 160, 382, 455, 500, 10, 5, 7, 22, 25, 45, 55, 69, 49, 58, 76, 74, 73, 244, 245, 246, 251, 250];
+                          81, 136, 169, 290, 354, 92, 160, 382, 455, 500, 10, 5, 7, 22, 25, 45, 55, 69, 49, 58, 76, 74, 73, 244, 245, 246, 251, 250,
+                          38, 26, 50, 27, 39];
 
 // Montar Grid de Números
 for (let i = 1; i <= configuracoesRifa.quantidadeNumeros; i++) {
@@ -86,3 +87,4 @@ document.getElementById('btnCompartilhar').addEventListener('click', () => {
     });
   }
 });
+
