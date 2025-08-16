@@ -58,6 +58,14 @@ input:checked + .slider:before {
     </nav>
     <h1>Lista de Participantes</h1>
         <h2>Total Recebido: <span id="totalRecebido">R$ 0,00</span></h2>
+    <div>
+        <h2>Total Recebido: <span id="totalRecebido">R$ 0,00</span></h2>
+        <!-- Contador da Rifa -->
+        <div id="contadorRifa">
+        <p><strong>Reservados:</strong> <span id="qtdReservados">0</span></p>
+        <p><strong>Disponíveis:</strong> <span id="qtdDisponiveis">0</span></p>
+        </div>
+    </div>
     <table id="tabelaParticipantes"  style="border : 1; width:70%; text-align:left;">
         <thead>
             <tr>
@@ -76,4 +84,5 @@ input:checked + .slider:before {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </body>
 </html>
+
 
