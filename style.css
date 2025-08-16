@@ -99,6 +99,7 @@ table {
 th, td {
     border: 1px solid #ddd;
     padding: 10px;
+    margin: 5px;
 }
 
 th {
@@ -333,3 +334,4 @@ th {
     border-color: red;
     font-weight: bold;
 }
+
