@@ -23,6 +23,25 @@ function atualizarTotalRecebido() {
     }
 }
 
+// Carregar configurações da Rifa (precisa existir)
+let configuracoesRifa = JSON.parse(localStorage.getItem('configuracoesRifa')) || {
+    itemRifa: 'Rifa',
+    quantidadeNumeros: 500
+};
+
+// --- Atualiza contador de números ---
+function atualizarContadorRifa() {
+    const numerosReservados = participantes.flatMap(p => p.numeros || (p.numero ? [p.numero] : []));
+    const qtdReservados = numerosReservados.length;
+    const qtdDisponiveis = configuracoesRifa.quantidadeNumeros - qtdReservados;
+
+    const elReservados = document.getElementById('qtdReservados');
+    const elDisponiveis = document.getElementById('qtdDisponiveis');
+
+    if (elReservados) elReservados.textContent = qtdReservados;
+    if (elDisponiveis) elDisponiveis.textContent = qtdDisponiveis;
+}
+
 // --- Monta/Atualiza a tabela ---
 function atualizarTabela() {
     tabelaParticipantes.innerHTML = '';
@@ -48,6 +67,16 @@ function atualizarTabela() {
         tabelaParticipantes.appendChild(row);
     });
 
+    // Atualiza total recebido e contador APENAS UMA vez após montar a tabela
+    atualizarTotalRecebido();
+    atualizarContadorRifa();
+
+    // Adiciona os listeners (Excluir, WhatsApp, Editar, Pago)
+    adicionarListenersTabela();
+}
+
+// --- Separa os listeners em função para melhor organização ---
+function adicionarListenersTabela() {
     // Excluir
     document.querySelectorAll('.btnExcluir').forEach(btn => {
         btn.addEventListener('click', (e) => {
@@ -72,13 +101,14 @@ function atualizarTabela() {
         });
     });
 
-    // Pago / Não pago  (um único listener por checkbox)
+    // Pago / Não pago
     document.querySelectorAll('.chkPago').forEach(chk => {
         chk.addEventListener('change', (e) => {
             const idx = Number(e.currentTarget.dataset.index);
             participantes[idx].pago = e.currentTarget.checked;
             localStorage.setItem('participantesRifa', JSON.stringify(participantes));
-            atualizarTotalRecebido(); // atualiza o total na hora
+            atualizarTotalRecebido();
+            atualizarContadorRifa(); // <- atualiza também o contador
         });
     });
 
@@ -122,20 +152,8 @@ function atualizarTabela() {
             });
         });
     });
-
-    // Chama UMA vez no final (e não dentro do forEach de linhas)
-    atualizarTotalRecebido();
 }
 
-// Limpar tudo
-btnLimparTudo.addEventListener('click', () => {
-    if (confirm('Deseja realmente apagar todos os participantes e resetar a rifa?')) {
-        participantes = [];
-        localStorage.removeItem('participantesRifa');
-        atualizarTabela();
-        alert('Rifa resetada com sucesso!');
-    }
-});
 
 // PDF
 btnGerarPDF.addEventListener('click', () => {
